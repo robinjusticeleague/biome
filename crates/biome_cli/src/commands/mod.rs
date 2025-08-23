@@ -62,9 +62,9 @@ pub(crate) mod version;
 
 #[derive(Debug, Clone, Bpaf)]
 #[bpaf(options, version(VERSION))]
-/// Biome official CLI. Use it to check the health of your project or run it to check single files.
+/// DX official CLI. Use it to check the health of your project or run it to check single files.
 pub enum BiomeCommand {
-    /// Shows the Biome version information and quit.
+    /// Shows the DX version information and quit.
     #[bpaf(command)]
     Version(#[bpaf(external(cli_options), hide_usage)] CliOptions),
 
@@ -72,7 +72,7 @@ pub enum BiomeCommand {
     /// Prints information for debugging.
     Rage(
         #[bpaf(external(cli_options), hide_usage)] CliOptions,
-        /// Prints the Biome daemon server logs
+        /// Prints the DX daemon server logs
         #[bpaf(long("daemon-logs"), switch)]
         bool,
         /// Prints the formatter options applied
@@ -82,7 +82,7 @@ pub enum BiomeCommand {
         #[bpaf(long("linter"), switch)]
         bool,
     ),
-    /// Starts the Biome daemon server process.
+    /// Starts the DX daemon server process.
     #[bpaf(command)]
     Start {
         /// Allows to change the prefix applied to the file name of the logs.
@@ -107,7 +107,7 @@ pub enum BiomeCommand {
         log_path: Utf8PathBuf,
     },
 
-    /// Stops the Biome daemon server process.
+    /// Stops the DX daemon server process.
     #[bpaf(command)]
     Stop,
 
@@ -154,7 +154,7 @@ pub enum BiomeCommand {
         /// print the output to `stdout`.
         ///
         /// The file doesn't need to exist on disk, what matters is the
-        /// extension of the file. Based on the extension, Biome knows how to
+        /// extension of the file. Based on the extension, DX knows how to
         /// check the code.
         ///
         /// Also, if you have overrides configured and/or nested configurations,
@@ -250,7 +250,7 @@ pub enum BiomeCommand {
 
         /// Use this option when you want to format code piped from `stdin`, and print the output to `stdout`.
         ///
-        /// The file doesn't need to exist on disk, what matters is the extension of the file. Based on the extension, Biome knows how to lint the code.
+        /// The file doesn't need to exist on disk, what matters is the extension of the file. Based on the extension, DX knows how to lint the code.
         ///
         /// Example:
         /// ```shell
@@ -302,7 +302,7 @@ pub enum BiomeCommand {
         files_configuration: Option<FilesConfiguration>,
         /// Use this option when you want to format code piped from `stdin`, and print the output to `stdout`.
         ///
-        /// The file doesn't need to exist on disk, what matters is the extension of the file. Based on the extension, Biome knows how to format the code.
+        /// The file doesn't need to exist on disk, what matters is the extension of the file. Based on the extension, DX knows how to format the code.
         ///
         /// Example:
         /// ```shell
@@ -395,7 +395,7 @@ pub enum BiomeCommand {
     /// Bootstraps a new biome project. Creates a configuration file with some defaults.
     #[bpaf(command)]
     Init(
-        /// Tells Biome to emit a `biome.jsonc` file.
+        /// Tells DX to emit a `biome.jsonc` file.
         #[bpaf(long("jsonc"), switch)]
         bool,
     ),
@@ -469,7 +469,7 @@ pub enum BiomeCommand {
         /// `stdin`, and print the output to `stdout`.
         ///
         /// The file doesn't need to exist on disk, what matters is the
-        /// extension of the file. Based on the extension, Biome knows how to
+        /// extension of the file. Based on the extension, DX knows how to
         /// parse the code.
         ///
         /// Example:
@@ -558,10 +558,10 @@ pub enum BiomeCommand {
 
 #[derive(Debug, Bpaf, Clone)]
 pub enum MigrateSubCommand {
-    /// It attempts to find the files `.prettierrc`/`prettier.json` and `.prettierignore`, and map the Prettier's configuration into Biome's configuration file.
+    /// It attempts to find the files `.prettierrc`/`prettier.json` and `.prettierignore`, and map the Prettier's configuration into DX's configuration file.
     #[bpaf(command)]
     Prettier,
-    /// It attempts to find the ESLint configuration file in the working directory, and update the Biome's configuration file as a result.
+    /// It attempts to find the ESLint configuration file in the working directory, and update the DX's configuration file as a result.
     #[bpaf(command)]
     Eslint {
         /// Includes rules inspired from an eslint rule in the migration
@@ -674,7 +674,7 @@ pub(crate) fn validate_configuration_diagnostics(
 
         return Err(CliDiagnostic::workspace_error(
             BiomeDiagnostic::invalid_configuration(
-                "Biome exited because the configuration resulted in errors. Please fix them.",
+                "DX exited because the configuration resulted in errors. Please fix them.",
             )
             .into(),
         ));
@@ -705,7 +705,7 @@ pub(crate) fn print_diagnostics_from_workspace_result(
     if has_errors {
         return Err(CliDiagnostic::workspace_error(
             BiomeDiagnostic::invalid_configuration(
-                "Biome exited because the configuration resulted in errors. Please fix them.",
+                "DX exited because the configuration resulted in errors. Please fix them.",
             )
             .into(),
         ));

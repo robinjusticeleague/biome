@@ -1,6 +1,7 @@
 # DX
 
 ```bash
+find . -type d -name "tests" -print0 | xargs -0 rm -rf
 gitpod /workspace/biome (main) $ du -sh .[!.]* * | sort -rh
 23G     target
 242M    .git
