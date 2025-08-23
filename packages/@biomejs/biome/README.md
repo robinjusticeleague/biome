@@ -1,3 +1,55 @@
+```bash
+gitpod /workspace/biome (main) $ du -sh .[!.]* * | sort -rh
+23G     target
+242M    .git
+187M    node_modules
+129M    crates
+2.1M    packages
+752K    xtask
+236K    CHANGELOG_v1.md
+176K    .github
+124K    Cargo.lock
+104K    fuzz
+100K    pnpm-lock.yaml
+68K     benchmark
+48K     ROME_CHANGELOG.md
+40K     e2e-tests
+24K     GOVERNANCE.md
+24K     CONTRIBUTING.md
+20K     .claude
+16K     scripts
+16K     Cargo.toml
+12K     LICENSE-APACHE
+12K     .changeset
+8.0K    justfile
+8.0K    CODE_OF_CONDUCT.md
+4.0K    taplo.toml
+4.0K    rust-toolchain.toml
+4.0K    rustfmt.toml
+4.0K    RELEASES.md
+4.0K    pnpm-workspace.yaml
+4.0K    plugins
+4.0K    package.json
+4.0K    .markdownlint.json
+4.0K    LICENSE-MIT
+4.0K    insta.yml
+4.0K    .gitpod.yml
+4.0K    .gitignore
+4.0K    .git-blame-ignore-revs
+4.0K    .gitattributes
+4.0K    .editorconfig
+4.0K    .dockerignore
+4.0K    Dockerfile.benchmark
+4.0K    .devcontainer
+4.0K    .coderabbit.yaml
+4.0K    clippy.toml
+4.0K    CLAUDE.md
+4.0K    .cargo
+4.0K    biome.json
+0       README.md
+0       CHANGELOG.md
+```
+
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/biomejs/resources/main/svg/slogan-dark-transparent.svg">
